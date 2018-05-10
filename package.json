@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/kvarble/handlebars#readme",
   "dependencies": {
+    "mysql": "^2.15.0",
     "request": "^2.85.0"
   }
 }

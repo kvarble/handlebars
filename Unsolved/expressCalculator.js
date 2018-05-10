@@ -11,14 +11,14 @@ var app = express();
 // Routes
 // What routes do you need to have? Which ones are optional?
 // TODO Add your routes here
-app.get("", function(req, res) {
+app.get("/:operation/:numberOne/:numberTwo", function(req, res) {
 
   // TODO parse out the variables from the request
   // Parameters are received from the URL
   // TODO make sure they're converted to integers (and not strings)
   // Parameters are converted to integers
-var firstNumber = parseInt(req.params.firstNumber);
-var secondNumber = parseInt(req.params.secondNumber);
+var firstNumber = parseInt(req.params.numberOne);
+var secondNumber = parseInt(req.params.numberTwo);
 var result;
 
   // Initialize the result variable to send later
@@ -27,15 +27,23 @@ var result;
   switch (operation) {
   // BONUS - How could you use * + etc. inside the app.get()?
   case "add":
+  result = firstNumber + secondNumber
+  res.send(result.toString())
     // Add your logic here. Pun intended.
     break;
   case "subtract":
+  result = firstNumber - secondNumber
+  res.send(result.toString())
     // Subtract logic
     break;
   case "multiply":
+  result = firstNumber * secondNumber
+  res.send(result.toString())
     // Multiply
     break;
   case "divide":
+  result = firstNumber / secondNumber
+  res.send(result.toString())
     // Divide
     break;
   default:
